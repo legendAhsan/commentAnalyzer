@@ -1,0 +1,60 @@
+<!doctype html>
+<title>Home</title>
+
+
+<section class="content">
+
+  {% for message in data %}
+
+    <div class="card" style="width:400px">
+      <!-- <img  class="card-img-top" src="{{url_for('static', filename='download.jpg')}}" alt="Card image"/> -->
+      <div class="card-body">
+        <h4 class="card-title">{{message['name']}}</h4>
+        <p class="card-text">{{message['price']}}</p>
+        <a href="{{url_for('about',mobilenumber=message['name'])}}" class="btn btn-primary">See Detail</a>
+      </div>
+    </div>
+
+  {% endfor %}
+</section>
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <title>
+                Ahsan app flask
+        </title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+        
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="card" style="width:400px">
+            <img  class="card-img-top" src="{{url_for('static', filename='download.jpg')}}" alt="Card image"/>
+            <div class="card-body">
+              <h4 class="card-title">John Doe</h4>
+              <p class="card-text">Some example text.</p>
+              <a href="{{url_for('about',mobilenumber=1)}}" class="btn btn-primary">See Profile</a>
+            </div>
+          </div>
+
+          <div class="card" style="width:400px">
+            <img  class="card-img-top" src="{{url_for('static', filename='download.jpg')}}" alt="Card image"/>
+            <div class="card-body">
+              <h4 class="card-title">John Doe</h4>
+              <p class="card-text">Some example text.</p>
+              <a href="{{url_for('about',mobilenumber=2)}}" class="btn btn-primary">See Profile</a>
+            </div>
+          </div>
+
+    </body>
+</html> -->
