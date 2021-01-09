@@ -1,0 +1,47 @@
+<!doctype html>
+<title>about</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+
+<section class="content">
+
+    <div class="container">
+        <div class="jumbotron">
+          <h1>5A's Mobiles</h1>
+        </div>
+        <h6 class="pt-3">Previous Comments</h6>
+        {% for message in data %}
+            {% if message['name']==mobileName %}
+                {% for mes in message['comment'] %}
+                    <p class="pt-1 pl-2"><strong>.</strong> {{mes}}</p6>
+                        
+                {% endfor %}
+            {% endif %}
+        {% endfor %}
+    <h6 class="pt-3">Enter your comment for mobile {{mobileName}}</h6>
+
+    <form action="{{url_for('comment',mobileName=mobileName)}}" method="POST">
+        <div class="form-group">
+          
+          <input  class="form-control" name="post" placeholder="Enter comment">
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+    </div>
+    <!-- <div>
+        <form action="{{url_for('comment',mobileName=mobileName)}}" method="POST">
+            <input name="post"/>
+            <button type="submit" value="submit">Submit</button>
+        </form>
+    </div> -->
+</section>
